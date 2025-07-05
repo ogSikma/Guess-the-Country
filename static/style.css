@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#guessing {
+    position: fixed;
+    width: 100%;
+    left: 50%;        /* Przesunięcie o 50% szerokości */
+    transform: translate(-50%); /* Dokładne wyśrodkowanie */
+    margin-top: -10%;
+    background-color: rgba(240, 240, 240, .7);
+}
+
+
+#history{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+h1 {
+    color: #4CAF50;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    margin-left: 25%;
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    text-align: center;
+    padding: 15px;
+}
+
+img {
+    width: 80px;  /* Dostosuj rozmiar */
+    height: 80px;
+    border-radius: 50%; /* Sprawia, że obrazek jest okrągły */
+    object-fit: cover; /* Zapewnia, że obrazek dobrze wypełnia okrąg */
+    border: 2px solid #ddd; /* Lekka ramka */
+}
+
+#map-container {
+    position: fixed;
+    bottom: -25%;
+    background-color: rgba(240, 240, 240, .7);
+    width: 60%;
+    height: 40%;
+    opacity: 0.6;
+    left: 20%;
+
+    transition: all 0.6s ease-in-out; /* Płynna animacja */
+
+    display: flex;
+    justify-content: center;  /* Wyśrodkowanie poziome */
+}
+
+#map-container:hover {
+    bottom: 0;
+    opacity: 1;
+}
+

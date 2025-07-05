@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Country</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="guessing">
+        <h1>Zgadnij Kraj!</h1>
+        <form method="POST">
+            <label for="user_answer">Wpisz nazwę kraju:</label>
+            <input type="text" id="user_answer" name="user_answer" required>
+            <input type="hidden" name="country_to_guess" value="{{ country_to_guess_html }}">
+            <button type="submit">Sprawdź odpowiedź</button>
+            <label><a href="{{ url_for('game') }}">Spróbuj ponownie</a></label>
+        </form>
+    </div>
+
+    <div id="history">
+        {% if history %}
+        {% for entry in history %}
+            <div class="guess">
+                <h3>Twoja odpowiedź: <strong>{{ entry.user_answer }}</strong></h3>
+                <table>
+                    <tr>
+                        {% for result in entry.results %}
+                            <td>
+                                <img src="{{ url_for('static', filename='images/' + result.split(':')[0]|replace(' ', '_')|replace('/', '_')|replace('\\', '_') + '.png') }}" 
+                                alt="{{ result.split(':')[0] }}">
+                                <br>
+                                {{ result }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div id="map-container">
+        {{ map_html | safe }}
+    </div>
+
+</body>
+</html>
